@@ -1,0 +1,6 @@
+main: me.elb1to.spoofer.PingSpoofer
+author: Elb1to
+name: PingSpoofer
+website: www.frozed.club
+version: ${project.version}
+description: Simple plugin to spoof players ping when executing /ping
