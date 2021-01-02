@@ -34,11 +34,15 @@ public class PlaceholderAPI extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
         if (identifier.equalsIgnoreCase("ping")) {
-            /*
-             * This is how the placeholder is used -> %ping_spoofer_ping%
-             * Example: Ping: %ping_spoofer_ping%
-             */
             return String.valueOf(PlayerUtils.getPing(player) - PlayerUtils.randomReductionVal(1, 30));
+        }
+
+        if (identifier.equalsIgnoreCase("realping")) {
+            return String.valueOf(PlayerUtils.getPing(player));
+        }
+
+        if (identifier.equalsIgnoreCase("spoofvalue")) {
+            return String.valueOf(PlayerUtils.randomReductionVal(1, 30));
         }
 
         return null;

@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
  * Date: 1/1/2021 @ 8:44 PM
  */
 public class PingCommand extends BaseCommand {
-    @Command(name = "connection", aliases = {"latency", "ping", "ms"})
+    @Command(name = "ping", aliases = {"latency", "connection", "ms"})
 
     @Override
     public void onCommand(CommandArgs cmd) {
@@ -23,6 +23,7 @@ public class PingCommand extends BaseCommand {
 
         if (args.length == 0) {
             player.sendMessage(ChatUtils.translate("&aYour ping: &o" + (PlayerUtils.getPing(player) - PlayerUtils.randomReductionVal(1, 30))));
+            player.sendMessage(ChatUtils.translate("&c[Debug] Real/Spoofed values &7&l| &4&o" + PlayerUtils.getPing(player) + " ~ " + PlayerUtils.randomReductionVal(1, 30)));
             return;
         }
 
